@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "aa60daee-f3ba-40bc-860b-1a343eceeda1",
+		"name": "JWT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16797002",
+		"_collection_link": "https://cloudy-shuttle-522276.postman.co/workspace/Dat~ff71846e-6111-43f1-beec-cdcb28d6f517/collection/16797002-aa60daee-f3ba-40bc-860b-1a343eceeda1?action=share&source=collection_link&creator=16797002"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"dxdat1\",\r\n    \"password\":\"123123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8686/mes-system/api/v1/auth/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8686",
+					"path": [
+						"mes-system",
+						"api",
+						"v1",
+						"auth",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "demo-controller",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkeGRhdCIsImlhdCI6MTY5MzM2NjY5NiwiZXhwIjoxNjkzNDUzMDk2fQ.NOLlVzp00C9hOUPUN3PuOMpeFbxd2Kb7BXcoLuchEEU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8686/mes-system/api/v1/demo-controller",
+					"host": [
+						"localhost"
+					],
+					"port": "8686",
+					"path": [
+						"mes-system",
+						"api",
+						"v1",
+						"demo-controller"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYXRkZXB0cmFpIiwiaWF0IjoxNjkzODE1NTA5LCJleHAiOjE2OTM5MDE5MDl9.6vd-U1ZNil7YHIXMtzs77kYsztOZxqTwIHXJZ7PTxYg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8686/mes-system/api/v1/admin",
+					"host": [
+						"localhost"
+					],
+					"port": "8686",
+					"path": [
+						"mes-system",
+						"api",
+						"v1",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh-token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkeGRhdCIsImlhdCI6MTY5MjkzMTU4MywiZXhwIjoxNjkzMDE3OTgzfQ.UlXdLrQXgraQRJdy8juxn_BPO9esQD48Nm4PFb48fFU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8686/mes-system/api/v1/auth/refresh-token",
+					"host": [
+						"localhost"
+					],
+					"port": "8686",
+					"path": [
+						"mes-system",
+						"api",
+						"v1",
+						"auth",
+						"refresh-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYXRkZXB0cmFpIiwiaWF0IjoxNjk0MjQwMzA1LCJleHAiOjE2OTQzMjY3MDV9.BUNuarhe29h18QOxOEe_YtLByO42mSlUTDjnAGj76O4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\":\"dat\",\r\n    \"lastname\":\"do\",\r\n    \"email\":\"dgfbj@gmail.com\",\r\n    \"username\": \"davfsstddptrai\",\r\n    \"permissionRoute\":3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8686/mes-system/api/v1/admin/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8686",
+					"path": [
+						"mes-system",
+						"api",
+						"v1",
+						"admin",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add route",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYXRkZXB0cmFpIiwiaWF0IjoxNjk0MjQwMzA1LCJleHAiOjE2OTQzMjY3MDV9.BUNuarhe29h18QOxOEe_YtLByO42mSlUTDjnAGj76O4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8686/mes-system/api/v1/admin/per/route",
+					"host": [
+						"localhost"
+					],
+					"port": "8686",
+					"path": [
+						"mes-system",
+						"api",
+						"v1",
+						"admin",
+						"per",
+						"route"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete route",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkeGRhdCIsImlhdCI6MTY5Mzc5MTk1NCwiZXhwIjoxNjkzODc4MzU0fQ.h9U_Qrx82yWjGqrZWLY9juiO7btXP7QwSopTJspbYi8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8686/mes-system/api/v1/admin/per/route",
+					"host": [
+						"localhost"
+					],
+					"port": "8686",
+					"path": [
+						"mes-system",
+						"api",
+						"v1",
+						"admin",
+						"per",
+						"route"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "detail route",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYXRkZXB0cmFpIiwiaWF0IjoxNjkzODE1NTA5LCJleHAiOjE2OTM5MDE5MDl9.6vd-U1ZNil7YHIXMtzs77kYsztOZxqTwIHXJZ7PTxYg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "localhost:8686/mes-system/api/v1/admin/per/route/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8686",
+					"path": [
+						"mes-system",
+						"api",
+						"v1",
+						"admin",
+						"per",
+						"route",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employee",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkeGRhdDEiLCJpYXQiOjE2OTQ0MjUwNDcsImV4cCI6MTY5NDUxMTQ0N30.3YoIhJhbAHkP-W4g4DtJi-fOLTiCVw-p2aVQT9fvpJ4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8686/mes-system/api/v1/admin/employee/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8686",
+					"path": [
+						"mes-system",
+						"api",
+						"v1",
+						"admin",
+						"employee",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit employee",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkeGRhdDEiLCJpYXQiOjE2OTQ0MjYwMDMsImV4cCI6MTY5NDUxMjQwM30.BED2kd_IqfSaBmr9WwgyTSKRDVSjD1dSGln3eM1efnc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"firstname\": \"Do\",\r\n    \"lastname\": \"Dat\",\r\n    \"active\": true,\r\n    \"useStatus\": true,\r\n    \"permissionRoute\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8686/mes-system/api/v1/admin/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8686",
+					"path": [
+						"mes-system",
+						"api",
+						"v1",
+						"admin",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

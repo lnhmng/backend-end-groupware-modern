@@ -1,0 +1,85 @@
+server:
+#  http2:
+#    enabled: false
+#    ssl:
+#      enabled: true
+#      key-alias: grpc
+#      key-store: classpath:mesmodern.jks
+#      key-store-password: modern2023
+#      key-store-type: PKCS12
+  port: 8686
+  domains: https://localhost:8686/modern
+  servlet:
+    context-path: /modern
+    static-path: /ws-data
+    session:
+      cookie:
+        tracking-modes: cookie
+        http-only: true
+        name: MES_SSESSION
+      timeout: 30m
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: modern
+  datasource:
+    url: jdbc:sqlserver://10.81.148.114:1433;databaseName=demo;encrypt=true;trustServerCertificate=true
+    username: sa
+    password: Foxconn456789
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.SQLServer2008Dialect
+    database: sqlserver
+    database-platform: org.hibernate.dialect.SQLServerDialect
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  jmx:
+    default-domain: modern
+  jackson:
+    time-zone: Asia/Ho_Chi_Minh
+    date-format: yyyy/MM/dd HH:mm:ss
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+    messages:
+      encoding: UTF-8
+    multipart:
+      location: D:/project/source/data/ws
+      enabled: true
+      max-file-size: 64MB
+      max-request-size: 128MB
+
+application:
+  security:
+    jwt:
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970modern
+      expiration: 86400000 # a day
+      refresh-token:
+        expiration: 86400000 # a days
+
+# uploading
+path:
+  data: D:/project/source/data/modern
+
+# logging
+logging:
+  file:
+    path: /logs
+  level:
+    root: INFO
+    com.groupware: DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.springframework.jdbc.core.JdbcTemplate: TRACE
+    org.springframework.web.client.RestTemplate: DEBUG
